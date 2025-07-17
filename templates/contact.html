@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{# 
+This line tells Flask to use 'base.html' as the layout template.
+The content here will be inserted into the blocks defined in 'base.html'.
+#}
+
+{% block title %}Get in Touch!{% endblock %}
+{# Sets the title of the browser tab for this page #}
+
+{% block content %}
+<div class="construction-banner">
+  🚧 🚧 🚧 This website is currently under construction 🚧 🚧 🚧 
+</div>
+<section>
+<h1>Get in Touch</h1>
+<p>
+    I’m always happy to connect about data projects, collaboration opportunities, or anything analytics-related!
+</p>
+
+<h2>Email</h2>
+<p><a href="mailto:tharrington950@gmail.com">tharrington950@gmail.com</a></p>
+
+<h2>LinkedIn</h2>
+<p>
+    <a href="https://www.linkedin.com/in/tyler-harrington-362837b6/" target="_blank">
+        linkedin.com/in/tyler-harrington-362837b6
+    </a>
+</p>
+
+<h2>GitHub</h2>
+<p>
+    <a href="https://github.com/tharr950" target="_blank">
+        github.com/tharr950
+    </a>
+</p>
+</section>
+{% endblock %}
