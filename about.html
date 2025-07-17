@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{# 
+This line tells Flask to use 'base.html' as the layout template.
+The content here will be inserted into the blocks defined in 'base.html'.
+#}
+
+{% block title %}About - My Resume{% endblock %}
+{# Sets the title of the browser tab for this page #}
+
+{% block content %}
+<!-- Main content of the About page -->
+<div class="construction-banner">
+  🚧 🚧 🚧 This website is currently under construction 🚧 🚧 🚧 
+</div>
+
+<h1>About Me</h1>
+<!-- This is your main heading for the page -->
+
+<!-- === Education Section === -->
+<section class="education-section">
+  <h2>Education</h2>
+  <div class="education-flex">
+    <ul class="education-list">
+      <li><strong>M.S. in Finance</strong>, University of Texas Permian Basin (2023)</li>
+      <li><strong>M.S. in Mathematics</strong>, University of Massachusetts Lowell (2022)</li>
+      <li><strong>M.S. in Environmental Studies-Atmospheric Science Option</strong>, University of Massachusetts Lowell (2021)</li>
+      <li><strong>B.S. in Atmospheric Science</strong>, University of Kansas (2019)</li>
+      <li><strong>B.A. in Mathematics</strong>, University of Kansas (2019)</li>
+    </ul>
+
+    <div class="education-logos">
+    <img src="{{ url_for('static', filename='KULogo.png') }}" 
+     alt="KU Logo"/>
+    <img src="{{ url_for('static', filename='UMLLogo.png') }}" 
+     alt="UML Logo"/>
+    <img src="{{ url_for('static', filename='UTPBLogo.png') }}" 
+     alt="UTPB Logo"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- === Work Experience Section === -->
+<section>
+    <h2>Work Experience</h2>
+    <ul>
+        <li>
+            <strong>Data Analyst III</strong> – Progressive Insurance (May 2024 - Present)
+            <br>
+            <br>
+            <!-- Each job includes responsibilities or accomplishments -->
+            <ul> - Optimize risk portfolio by developing data models that reduce volatility and align with
+corporate financial objectives, resulting in more stable performance metrics<br>
+            - Automate complex data analysis workflows using tools such as Python and SQL Server,
+improving processing speed and reducing manual efforts by 70% <br>
+            - Create interactive dashboards and reports using Tableau to communicate findings to
+stakeholders clearly and effectively
+            </ul>
+        <br>
+        </li>
+        <li>
+            <strong>Corporate Finance & Data Intelligence Analyst</strong> – Revolution Prep (Nov 2022 - Present)
+            <br>
+            <br>
+            <ul> - Automate manual, time-intensive processes using Python & MySQL, reducing hours of
+repetitive work and improving team efficiency<br>
+            - Analyze complex datasets to uncover insights on customer conversion, retention, and
+engagement, driving strategic improvements in marketing & product initiatives<br>
+            - Build predictive models that addressed long-standing business bottlenecks and guide resource
+allocation decisions
+            </ul>
+        <br>   
+        </li>
+        <li>
+            <strong>Financial Model Validation Analyst II / III</strong> – Verisk: Extreme Event Solutions (May 2022 - May 2024)
+            <br>
+            <br>
+            <ul> - Utilize Python, GIS, R, and Microsoft SQL Server to perform data analysis on large datasets
+from Verisk’s Touchstone software<br>
+            - Critically examine the quality of catastrophe models including peril modeling, engineering
+vulnerability, and financial modeling via exploratory testing and validation<br>
+            - Improve efficiency by expanding on automated or scripted financial testing<br>
+            - Perform financial model validation and actuarial equivalency testing for audits and general
+quality control<br>
+            - Lead a scrum team of software developers, analysts, and product owners to improve agile
+practices and ensure timely product releases
+            </ul>
+        <br>   
+        </li>        
+    </ul>
+</section>
+
+<!-- === Publications Section === -->
+<section>
+    <h2>Publications</h2>
+    <ol>
+        <!-- List your publications, with links if available -->
+        <li><strong>Harrington TS</strong>, Zhu J, Skinner CB (2021), Terrestrial sources of summer Arctic moisture and the
+implication for Arctic temperature patterns. npj Climate and Atmospheric Science, 4,
+            25,<a href=https://doi.org/10.1038/s41612-021-00181-y target="_blank">https://doi.org/10.1038/s41612-021-00181-y</a></li>
+        <li><strong>Harrington TS</strong>, Nusbaumer J, Skinner CB (2023), The contribution of transpiration, ground
+evaporation, and canopy evaporation to local and remote precipitation across North
+America. Journal of Geophysical Research: Atmospheres, 128, 
+<a href=https://doi:10.1029/2022JD037290 target="_blank">https://doi:10.1029/2022JD037290</a></li>
+        <li>Skinner CB, <strong>Harrington TS</strong>, Barlow M, Agel L (2023), The contribution of precipitation recycling
+to North American wet and dry precipitation extremes. Environmental Research: Climate, 2,
+<a href=https://doi:10.1088/2752-5295/acffea target="_blank">https://doi:10.1088/2752-5295/acffea</a></li>
+        <li>Leeper RD, <strong>Harrington TS</strong>, et. al. (2025), The Influence of Drought on Heat Wave Intensity,
+Duration, and Exposure. Journal of Applied Meteorology and Climatology, 64(5) 425-438,
+<a href=https://doi.org/10.1175/JAMC-D-24-0072.1 target="_blank">https://doi.org/10.1175/JAMC-D-24-0072.1</a></li>
+    </ol>
+</section>
+
+<!-- === Optional Skills Section === -->
+<section class="skills-section">
+  <h2>Skills</h2>
+  <div class="skills-flex">
+    <ul class="skills-list">
+      <li>Data Analysis: Python, R, SQL, Excel</li>
+      <li>Data Visualization: Tableau, Python (Streamlit), PowerBI</li>
+      <li>Version Control: Git, GitHub</li>
+      <li>Web: HTML, CSS, Python (Flask)</li>
+      <li>Automation: Python (Selenium), Snowflake</li>
+      <li>Machine Learning/AI: Regression, Classification, Clustering, Neural Networks</li>
+      <li>Modeling Software: CESM, Touchstone, Risk Insight</li>
+    </ul>
+
+    <div class="skills-logos">
+    <img src="{{ url_for('static', filename='PythonLogo.png') }}" 
+     alt="Python Logo"/>
+    <img src="{{ url_for('static', filename='SQLLogo.png') }}" 
+     alt="SQL Logo"/>
+    <img src="{{ url_for('static', filename='GithubLogo.png') }}" 
+     alt="Github Logo"/>
+    <img src="{{ url_for('static', filename='TableauLogo.png') }}" 
+     alt="Tableau Logo"/>
+    <img src="{{ url_for('static', filename='SnowflakeLogo.png') }}" 
+     alt="Snowflake Logo"/>
+    </div>
+  </div>
+</section>
+
+
+<!-- === Optional Contact Info Section === -->
+<section>
+    <h2>Contact</h2>
+    <p>Email: tharrington950@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/tyler-harrington-362837b6/" target="_blank">My Profile</a></p>
+</section>
+
+{% endblock %}
+{# This ends the 'content' block defined in base.html #}

@@ -1,0 +1,506 @@
+/* ========= Global Styles ========= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+  background-color: #f4f6f8;
+  background-image: url("https://www.heropatterns.com/static/media/topography.9c8b82fa.svg");
+  background-size: cover;
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #2B3B52;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #2B3B52;
+  margin: 40px 0 15px;
+}
+
+ul {
+  padding-left: 60px;
+}
+
+/* ========= Navigation ========= */
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+/* ========= Layout & Containers ========= */
+
+.content {
+  background: white;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.homepage-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+section {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* ========= Hero Section ========= */
+
+.section_1 {
+  position: relative;
+  background: linear-gradient(135deg, #1B263B 0%, #3A5068 100%);
+  color: #E0F7FA;
+  text-align: center;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.dots-svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.header_1,
+.section_1 p {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* ========= SVG Nodes & Lines ========= */
+
+circle,
+rect,
+ellipse {
+  fill: #00BCD4;
+  stroke: white;
+  stroke-width: 0.75;
+}
+
+.text-node {
+  fill: white;
+}
+
+.animated-line {
+  stroke: #81D4FA;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLine 2s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ========= Project Gallery ========= */
+
+.project-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.project-figure {
+  flex: 1 1 45%;
+  text-align: center;
+  max-width: 500px;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-figure figcaption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
+}
+
+.fancy-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #aaa, transparent);
+  margin: 50px 0;
+}
+
+/* ========= Sidebar Layout ========= */
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 5px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.project-content {
+  flex: 1;
+  max-width: 900px;
+}
+
+/* ========= Vertical Tile Pipeline ========= */
+
+.vertical-tile-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 40px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.vertical-tile {
+  flex: 0 0 240px;
+  background-color: #f9fbfc;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  scroll-snap-align: start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.vertical-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .vertical-tile {
+    flex: 1 1 calc(50% - 24px);
+  }
+}
+
+@media (max-width: 600px) {
+  .vertical-tile {
+    flex: 1 1 100%;
+  }
+}
+
+
+.tile-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+}
+
+.tile-icon svg {
+  display: block;
+}
+.tile-icon svg circle {
+  fill: none !important;
+  stroke: #00BCD4; /* keep the stroke color */
+}
+
+.gear-connector {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-connector svg {
+  animation: spin 8s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+circle.circ2,
+rect.rect2 {
+  fill: #2B3B52;
+  stroke: #2B3B52;
+}
+
+.circ2 {
+  stroke: #2B3B52 !important;
+  stroke-width: 1.75 !important;
+}
+
+.project-list {
+  list-style: none;       /* Remove bullets */
+  padding-left: 0;
+  display: flex;          /* Layout items in a row */
+  overflow-x: auto;
+  gap: 24px; /* Space between boxes */
+  padding: 40px;
+  flex-wrap: wrap;        /* Wrap on smaller screens */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.project-list li {
+  background-color: #f9fbfc;      /* Light, soft background */
+  border: 1px solid #ccc;         /* Soft border */
+  border-radius: 8px;            /* Rounded corners */
+  padding: 20px;
+  width: 280px;                   /* Fixed width for uniform boxes */
+  min-height: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+
+.project-list li:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.project-list li a {
+  text-decoration: none;
+  color: #2B3B52;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: block;                /* Make the whole box clickable */
+}
+
+.project-list li a:hover {
+  text-decoration: underline;
+}
+
+
+
+.intro-section {
+  margin-top: 20px; /* reduced top margin to bring it closer */
+  padding-top: 0;   /* remove extra padding */
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* space between text and image */
+  max-width: 900px;
+}
+
+.intro-text-box {
+  flex: 1;
+  background-color: #f9fbfc;   /* light box background */
+  border: 0px solid #ccc;
+  border-radius: 1px;
+  padding: 1px 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 1.1em;
+  color: #333;
+}
+
+.intro-headshot-box {
+  flex-shrink: 0;
+  width: 200px; /* fixed width */
+  height: 200px; /* fixed height */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.intro-headshot-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+
+
+.education-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.education-list {
+  list-style: disc;
+  padding-left: 10px;
+  margin: 0;
+  flex: 1;
+  max-width: 800px; /* Add this to control width */
+}
+
+
+.education-logos {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.education-logos img {
+  width: 200px;
+  height: 160px;
+  object-fit: contain;
+  background-color: white;         /* Optional: gives them a neutral background */
+  border: 0.1px solid #ddd;          /* Optional: helps standardize appearance */
+  border-radius: 8px;              /* Optional: gives uniform rounded edges */
+  padding: 10px;                   /* Optional: centers logos inside box */
+  box-sizing: border-box;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+
+
+.skills-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.skills-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  flex: 1;
+  max-width: 600px;
+}
+
+.skills-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px 10px;
+  align-items: center;
+  justify-items: center;
+  width: 180px; /* Control width of the logo layout */
+}
+
+.skills-logos img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding-bottom: 50;
+}
+
+/* Olympic ring offset effect */
+.skills-logos img:nth-child(4),
+.skills-logos img:nth-child(5) {
+  margin-top: 2px;
+}
+.skills-logos img:nth-child(4) {
+  margin-left: 150px;
+}
+.skills-logos img:nth-child(5) {
+  margin-right: -150px;
+}
+.skills-logos img:nth-child(2) {
+  margin-right: 60px;
+}
+
+.construction-banner {
+  background-color: #FFF3CD;
+  color: #856404;
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #FFEEBA;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 9999;
+}
+.construction-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+body {
+  padding-top: 50px; /* Adjust to match banner height */
+}
+
+
+
+
+
